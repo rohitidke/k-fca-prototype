@@ -205,3 +205,25 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# K-FCA Output files (generated visualizations and exports)
+output/contexts/*.png
+output/contexts/*.pdf
+output/lattices/*.png
+output/lattices/*.pdf
+output/concepts/*.png
+output/concepts/*.pdf
+output/exports/*.dot
+output/exports/*.json
+output/exports/*.csv
+
+# Keep directory structure but ignore contents
+!output/contexts/.gitkeep
+!output/lattices/.gitkeep
+!output/concepts/.gitkeep
+!output/exports/.gitkeep
+
+# Generated example outputs in root
+*.png
+*.dot
+!docs/*.png
