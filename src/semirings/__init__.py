@@ -9,5 +9,6 @@ from .base import IdempotentSemiring
 from .boolean import BooleanSemiring
 from .maxplus import MaxPlusSemiring
 from .minplus import MinPlusSemiring
+from .fuzzy import FuzzySemiring
 
-__all__ = ["IdempotentSemiring", "BooleanSemiring", "MaxPlusSemiring", "MinPlusSemiring"]
+__all__ = ["IdempotentSemiring", "BooleanSemiring", "MaxPlusSemiring", "MinPlusSemiring", "FuzzySemiring"]

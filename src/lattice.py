@@ -91,10 +91,12 @@ class ConceptLattice:
         self._compute_order()
 
     def _vector_to_indices(self, vec: np.ndarray) -> Tuple[int, ...]:
-        """Convert a characteristic vector to tuple of indices where non-zero."""
+        """Convert a characteristic vector to tuple of indices where >= pivot threshold."""
         indices = []
         for i, val in enumerate(vec):
-            if val != self.semiring.zero:
+            # Include if val >= pivot (val not below pivot)
+            # This properly thresholds fuzzy/continuous values
+            if val != self.semiring.zero and (self.semiring.leq(self.galois.pivot, val) or val == self.semiring.one):
                 indices.append(i)
         return tuple(sorted(indices))
 
